@@ -657,6 +657,11 @@ declare namespace Bull {
      * (even if there can be some delayed jobs not yet processed)
      */
     on(event: 'drained', callback: EventCallback): this; // tslint:disable-line unified-signatures
+
+    /**
+     * Returns a promise that resolves to the next job in queue.
+     */
+    getNextJob(): Promise<Job | null>
   }
 
   type EventCallback = () => void;
